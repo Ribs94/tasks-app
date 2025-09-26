@@ -22,6 +22,11 @@ export default function NewTask({ onAdd }) {
         className="w-64 px-2 py-1 rounded-sm bg-stone-200"
         onChange={handleChange}
         value={enteredTask}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            handleClick();
+          }
+        }}
       />
       <button
         onClick={handleClick}
